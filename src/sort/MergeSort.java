@@ -13,7 +13,7 @@ public class MergeSort {
 	}
 
 	private static void display(int[] arrayC) {
-		// TODO Auto-generated method stub
+		
 		for (int i = 0; i < arrayC.length; i++)
 		{
 			System.out.print(arrayC[i] + " ");
@@ -21,7 +21,6 @@ public class MergeSort {
 	}
 
 	private static void merge(int[] arrayA, int[] arrayB, int[] arrayC) {
-		// TODO Auto-generated method stub
 		int aDex = 0, bDex = 0, cDex = 0;
 		while (aDex < arrayA.length && bDex < arrayB.length)
 		{
@@ -63,7 +62,7 @@ public class MergeSort {
 
 	private static void merge(int[] workspace, int lowerBound, int i,
 			int upperBound) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 }
