@@ -13,10 +13,6 @@ public class ShellSort {
 			super(maxsize);
 		}
 
-		public String toString() {
-			return super.toString();
-		}
-
 		public void shellSort() {
 			int count = 0;
 			int inner, outer;
@@ -39,10 +35,11 @@ public class ShellSort {
 					}
 
 					this.set(inner, temp);
+					System.out.println(this);
 				}
 				h = (h - 1) / 3;
 			}
-			
+
 			System.out.println(count);
 		}
 	}
