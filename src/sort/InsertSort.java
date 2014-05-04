@@ -38,12 +38,6 @@ class ArrayIns {
 		System.out.println("");
 	}
 
-	public void swap(int one, int two) {
-		long temp = a[one];
-		a[one] = a[two];
-		a[two] = temp;
-	}
-
 	public void insSort() {
 		int in, out;
 

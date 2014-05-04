@@ -1,7 +1,5 @@
 package sort;
 
-import java.io.*;
-
 public class QuickSort {
 
 	private long[] theArray;
