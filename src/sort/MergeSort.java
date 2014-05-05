@@ -15,18 +15,6 @@ public class MergeSort {
 		arr.mergeSort();
 		arr.display();
 	}
-
-	private static void display(int[] arrayC) {
-
-		for (int i = 0; i < arrayC.length; i++) {
-			System.out.print(arrayC[i] + " ");
-		}
-	}
-
-	private static void merge(int[] arrayA, int[] arrayB, int[] arrayC) {
-
-	}
-
 }
 
 class ArrayMer {
