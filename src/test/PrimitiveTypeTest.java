@@ -2,6 +2,13 @@ package test;
 
 public class PrimitiveTypeTest {
 	
+	private final int i;
+	
+	public PrimitiveTypeTest(PrimitiveTypeTest p)
+	{
+		this.i = p.i;
+	}
+	
 	public static void main(String[] args) {
 	// byte
 //		System.out.println("基本类型：byte 二进制位数：" + Byte.SIZE);

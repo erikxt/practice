@@ -42,28 +42,28 @@ class ArrayStack {
 		long temp = 0;
 
 		for (int i = nElems / 2; i > 0; i--) {
-			adjust(a, i - 1, nElems);
+			adjust(i - 1, nElems);
 			System.out.println("建立大根堆");
 			display();
 		}
 
-		for (int i = nElems - 2; i >= 0; i--) { // 这是堆排序的具体算法，思想是每次取出堆的最顶层根节点，即数组下标为0，然后与最后一个节点即i+1交换，这样对于大根堆而言，最大值总是在后面。。循环过后就能排序了。。
-			temp = a[i + 1]; // 取出最后一个元素
-			a[i + 1] = a[0]; // 取出第一个元素，即顶层根节点
+		for (int i = nElems - 1; i > 0; i--) { // 这是堆排序的具体算法，思想是每次取出堆的最顶层根节点，即数组下标为0，然后与最后一个节点即i+1交换，这样对于大根堆而言，最大值总是在后面。。循环过后就能排序了。。
+			temp = a[i]; // 取出最后一个元素
+			a[i] = a[0]; // 取出第一个元素，即顶层根节点
 			a[0] = temp; // 交换位置
 
-			adjust(a, 0, i + 1); // 调整堆
+			adjust(0, i); // 调整堆
 			System.out.println("重建大根堆");
 			display();
 		}
 	}
 
-	private void adjust(long[] a, int i, int n) {
+	private void adjust(int i, int n) {
 		int j = 0;
 		long temp = 0;
 
 		temp = a[i]; // 取出根节点
-		j = 2 * i + i; // 左孩子节点
+		j = 2 * i + 1; // 左孩子节点
 
 		while (j <= n - 1) {
 			if (j < n - 1 && a[j] < a[j + 1]) { // 比较左右孩子，取出较大的孩子
