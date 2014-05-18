@@ -42,7 +42,7 @@ class ArrayStack {
 		long temp = 0;
 
 		for (int i = nElems / 2; i > 0; i--) {
-			adjust(i - 1, nElems);
+			adjust(a, i - 1, nElems);
 			System.out.println("建立大根堆");
 			display();
 		}
@@ -52,18 +52,18 @@ class ArrayStack {
 			a[i] = a[0]; // 取出第一个元素，即顶层根节点
 			a[0] = temp; // 交换位置
 
-			adjust(0, i); // 调整堆
+			adjust(a, 0, i); // 调整堆
 			System.out.println("重建大根堆");
 			display();
 		}
 	}
 
-	private void adjust(int i, int n) {
+	private void adjust(long[] a, int i, int n) {
 		int j = 0;
 		long temp = 0;
 
 		temp = a[i]; // 取出根节点
-		j = 2 * i + 1; // 左孩子节点
+		j = 2 * i + i; // 左孩子节点
 
 		while (j <= n - 1) {
 			if (j < n - 1 && a[j] < a[j + 1]) { // 比较左右孩子，取出较大的孩子
