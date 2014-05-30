@@ -44,7 +44,7 @@ public class ReadWriteLockTest {
 		try {
 			lock.readLock().tryLock(6000, TimeUnit.SECONDS);
 			System.out.println("add read lock");
-			System.out.println(list.get(0));
+			System.out.println(list.get(1));
 			Thread.sleep(5000);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -58,12 +58,12 @@ public class ReadWriteLockTest {
 	
 	public static void f3() throws InterruptedException
 	{
+		Thread.sleep(1);
 		System.out.println("enter f3");
 		try {
 			lock.writeLock().lock();
 			System.out.println("add write lock");
 			list.add("hi");
-			Thread.sleep(5000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
