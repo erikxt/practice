@@ -18,7 +18,7 @@ public class Prime {
 		}
 		int q = (int) Math.sqrt(n);
 		System.out.println(q);
-		for (int i = 2; i < q; i++) {
+		for (int i = 2; i <= q; i++) {
 			int j = 2 * i;
 			while (j <= n) {
 				result[j - 1] = 0;
