@@ -27,7 +27,7 @@ public class SelectSocketsThreadPool extends SelectSockets {
 	}
 
 	private class ThreadPool {
-		List idle = new LinkedList();
+		List<WorkerThread> idle = new LinkedList<WorkerThread>();
 
 		ThreadPool(int poolSize) {
 			for (int i = 0; i < poolSize; i++) {
@@ -69,7 +69,7 @@ public class SelectSocketsThreadPool extends SelectSockets {
 					this.wait();
 				} catch (InterruptedException e) {
 					e.printStackTrace();
-					this.interrupted();
+					Thread.interrupted();
 				}
 
 				if (key == null) {
