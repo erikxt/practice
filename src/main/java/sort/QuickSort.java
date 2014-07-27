@@ -61,28 +61,23 @@ class ArrayPar {
 	}
 
 	private int partitionIt(int left, int right, long pivot) {
-		System.out.println("left:" + left + " right:" + right + " pivot:" + pivot);
-		int leftPtr = left - 1;
+		int leftPrt = left - 1;
 		int rightPtr = right;
 		while (true) {
-			while (a[++leftPtr] < pivot)
+			while (a[++leftPrt] < pivot)
 				;
-
 			while (rightPtr > 0 && a[--rightPtr] > pivot)
 				;
 
-			if (leftPtr >= rightPtr) {
+			if (leftPrt >= rightPtr) {
 				break;
 			} else {
-				swap(leftPtr, rightPtr);
+				swap(leftPrt, rightPtr);
 			}
-			System.out.println("swap leftPtr and rightPtr " + "leftPtr:" + leftPtr + " rightPtr:" + rightPtr);
-			display();
 		}
-		swap(leftPtr, right);
-		System.out.println("swap leftPtr and right " + "leftPtr:" + leftPtr + " right:" + right);
-		display();
-		System.out.println();
-		return leftPtr;
+		swap(leftPrt, right);
+
+		return leftPrt;
 	}
+
 }

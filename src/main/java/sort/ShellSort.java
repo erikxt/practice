@@ -1,62 +1,62 @@
 package sort;
 
-import java.util.ArrayList;
-
 public class ShellSort {
-
-	class MyArrayList extends ArrayList<Integer> {
-
-		private static final long serialVersionUID = 2191258924393802375L;
-
-		public MyArrayList(int maxsize) {
-			super(maxsize);
-		}
-
-		public void shellSort() {
-			int count = 0;
-			int inner, outer;
-			int temp;
-
-			int h = 1;
-			while (h <= this.size() / 3) {
-				h = h * 3 + 1;
-			}
-
-			while (h > 0) {
-				for (outer = h; outer < this.size(); outer++) {
-					temp = this.get(outer);
-					inner = outer;
-
-					while (inner > h - 1 && this.get(inner - h) >= temp) {
-						this.set(inner, this.get(inner - h));
-						inner -= h;
-						count++;
-					}
-
-					this.set(inner, temp);
-					System.out.println(this);
-				}
-				h = (h - 1) / 3;
-			}
-
-			System.out.println(count);
-		}
-	}
-
+	
 	public static void main(String[] args) {
 
 		int maxsize = 10;
-		int[] list = new int[maxsize];
-		ShellSort s = new ShellSort();
-		MyArrayList myArrayLists = s.new MyArrayList(maxsize);
+		ArrayShl myArrayLists = new ArrayShl(maxsize);
 
 		for (int i = 0; i < maxsize; i++) {
-			list[i] = (int) (Math.random() * 99);
-			System.out.print(list[i] + "  ");
-			myArrayLists.add(list[i]);
+			myArrayLists.insert((long) (Math.random() * 99));
 		}
 		System.out.println();
 		myArrayLists.shellSort();
-		System.out.println(myArrayLists);
+		myArrayLists.display();
+	}
+}
+
+class ArrayShl {
+	private long[] a;
+	private int nElems;
+
+	public ArrayShl(int max) {
+		a = new long[max];
+		nElems = 0;
+	}
+
+	public void insert(long value) {
+		a[nElems] = value;
+		nElems++;
+	}
+
+	public void display() {
+		for (int i = 0; i < nElems; i++) {
+			System.out.print(a[i] + " ");
+		}
+		System.out.println("");
+	}
+
+	public void shellSort() {
+		int in, out;
+
+		int h = 1;
+		while (h <= nElems / 3) {
+			h = h * 3 + 1;
+		}
+		
+		while (h > 0) {
+			for (out = h; out < nElems; out++) {
+				long temp = a[out];
+				in = out;
+				while (in > h - 1 && a[in - h] >= temp) {
+					a[in] = a[in - h];
+					in-=h;
+				}
+				a[in] = temp;
+			}
+			h = (h - 1) / 3;
+		}
+		
 	}
 }
