@@ -5,8 +5,6 @@ import java.io.Serializable;
 
 import org.apache.commons.lang.SerializationUtils;
 
-import com.rabbitmq.client.MessageProperties;
-
 /**
  * The producer endpoint that writes to the queue.
  * 

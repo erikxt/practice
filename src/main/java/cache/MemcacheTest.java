@@ -53,7 +53,7 @@ public class MemcacheTest {
         for (int i = 0; i < 1000; i++) {
             String key = "key" + i;
             String value = (String) mc.get(key);
-//            System.out.printf("GET %s -> %s\n", key, value);
+            System.out.printf("GET %s -> %s\n", key, value);
             s++;
 
         }

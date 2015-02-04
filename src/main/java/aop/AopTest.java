@@ -14,6 +14,6 @@ public class AopTest {
 		IHelloWorldService helloworldService = 
 				ctx.getBean("helloWorldService", IHelloWorldService.class);
 		helloworldService.sayHello();
-//		((ClassPathXmlApplicationContext) ctx).close();
+		((ClassPathXmlApplicationContext) ctx).close();
 	}
 }

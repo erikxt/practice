@@ -92,7 +92,7 @@ public class TestForkJoinSimple {
 
     @Test
     public void testSort() throws Exception {
-        ForkJoinTask sort = new SortTask(array);
+        ForkJoinTask<?> sort = new SortTask(array);
         ForkJoinPool fjpool = new ForkJoinPool();
         fjpool.submit(sort);
         fjpool.shutdown();
