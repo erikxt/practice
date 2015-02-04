@@ -3,3 +3,5 @@
 .metadata/
 Servers/
 RemoteSystemsTempFiles/
+.project
+.classpath
