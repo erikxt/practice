@@ -1,6 +1,7 @@
 package java8test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -34,12 +35,17 @@ public class TestStream {
 	
 	public static List<Person> persons = new ArrayList<Person>();
 	
+	private static long countPrimes(int max) {
+	    return IntStream.range(1, max).parallel().filter(TestStream::isPrime).count();
+	}
+
+	private static boolean isPrime(long n) {
+	    return n > 1 && IntStream.rangeClosed(2, (int) Math.sqrt(n)).noneMatch(divisor -> n % divisor == 0);
+	}
+	
 	public static void main(String[] args) {
 		
-		Person p1 = new Person(19);
-		Person p2 = new Person(17);
-		persons.add(p1);
-		persons.add(p2);
+		persons = Arrays.asList(new Person(19), new Person(17), new Person(20));
 		List<Adult> adultList = (List<Adult>) persons
 	            .stream()
 	            .filter(p -> p.getAge() > 18)
@@ -65,5 +71,7 @@ public class TestStream {
 		//
 		 
 		System.out.printf("serial: %.2fs, parallel %.2fs%n", (t1 - t0) * 1e-9, (t2 - t1) * 1e-9);
+		
+		System.out.println(countPrimes(6));
 	}	
 }
