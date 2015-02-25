@@ -12,7 +12,6 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.ForkJoinTask;
 import java.util.concurrent.RecursiveAction;
 
-
 class SortTask extends RecursiveAction {
 	
 	private static final long serialVersionUID = -3807226934632837194L;

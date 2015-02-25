@@ -3,11 +3,11 @@ package sort;
 public class QuickSort {
 
 	public static void main(String[] args) {
-		int maxSize = 7;
+		int maxSize = 17;
 		ArrayPar arr = new ArrayPar(maxSize);
 
 		for (int i = 0; i < maxSize; i++) {
-			arr.insert((int) (Math.random() * 99));
+			arr.insert((int) (Math.random() * 199));
 		}
 
 		arr.display();
@@ -66,9 +66,9 @@ class ArrayPar {
 		while (true) {
 			while (a[++leftPrt] < pivot)
 				;
-			while (rightPtr > 0 && a[--rightPtr] > pivot)
-				;
-
+			while ( a[--rightPtr] > pivot)
+				System.out.print(a[rightPtr] + "\t");
+            System.out.println();
 			if (leftPrt >= rightPtr) {
 				break;
 			} else {
