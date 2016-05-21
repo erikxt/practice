@@ -24,7 +24,7 @@ public class TestMethodReference {
         frame.getContentPane().add(button2);
         //这里addActionListener方法的参数是ActionListener，是一个函数式接口
         //使用lambda表达式方式
-        button1.addActionListener(e -> { System.out.println("这里是Lambda实现方式"); });
+        button1.addActionListener(e -> System.out.println("这里是Lambda实现方式"));
         //使用方法引用方式
         button2.addActionListener(TestMethodReference::doSomething);
         

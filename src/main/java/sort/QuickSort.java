@@ -66,9 +66,8 @@ class ArrayPar {
 		while (true) {
 			while (a[++leftPrt] < pivot)
 				;
-			while ( a[--rightPtr] > pivot)
-				System.out.print(a[rightPtr] + "\t");
-            System.out.println();
+			while (--rightPtr > 0 && a[rightPtr] > pivot)
+				/*System.out.print(a[rightPtr] + "\t")*/;
 			if (leftPrt >= rightPtr) {
 				break;
 			} else {

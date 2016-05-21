@@ -1,7 +1,7 @@
 package algorithm;
 
 public class HannoTower {
-	static int nDisks = 29;
+	static int nDisks = 5;
 
 	public static void main(String[] args) {
 		doTowers(nDisks, 'A', 'B', 'C');

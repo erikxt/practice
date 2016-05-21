@@ -3,11 +3,11 @@ package sort;
 public class MergeSort {
 
 	public static void main(String[] args) {
-		int maxSize = 99;
+		int maxSize = 10;
 		ArrayMer arr = new ArrayMer(maxSize);
 
 		for (int i = 0; i < maxSize; i++) {
-			arr.insert((int) (Math.random() * 999));
+			arr.insert((int) (Math.random() * 99));
 		}
 
 		arr.display();
