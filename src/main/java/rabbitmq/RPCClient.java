@@ -16,7 +16,7 @@ public class RPCClient {
 	
 	public RPCClient() throws Exception {
 	    ConnectionFactory factory = new ConnectionFactory();
-	    factory.setHost("localhost");
+	    factory.setHost("192.168.1.120");
 	    connection = factory.newConnection();
 	    channel = connection.createChannel();
 	
@@ -55,10 +55,10 @@ public class RPCClient {
 	public static void main(String[] args) throws Exception {
 		RPCClient fibonacciRpc = new RPCClient();
 
-		System.out.println(" [x] Requesting fib(10)");   
-		String response = fibonacciRpc.call("10");
+		System.out.println(" [x] Requesting fib(12)");   
+		String response = fibonacciRpc.call("12");
 		System.out.println(" [.] Got '" + response + "'");
-
+		Thread.sleep(10000);
 		fibonacciRpc.close();
 	}
 }

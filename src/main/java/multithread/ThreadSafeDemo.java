@@ -7,7 +7,7 @@ import java.util.Random;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ThreadSafeDemo {
-	public static int demo(final List list, final int testCount)
+	public static int demo(final List<String> list, final int testCount)
 			throws InterruptedException {
 		long startTime = System.currentTimeMillis();
 		ThreadGroup group = new ThreadGroup(list.getClass().getName() + "@"
@@ -39,8 +39,8 @@ public class ThreadSafeDemo {
 	}
 
 	public static void main(String[] args) throws InterruptedException {
-		List unsafeList = new ArrayList();
-		List safeList = new CopyOnWriteArrayList(); // 也可以换成new
+		List<String> unsafeList = new ArrayList<String>();
+		List<String> safeList = new CopyOnWriteArrayList<String>(); // 也可以换成new
 																		// CopyToWriteArrayList
 		final int N = 100000;
 		for (int i = 0; i < 5; i++) {

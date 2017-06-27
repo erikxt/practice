@@ -19,7 +19,7 @@ public class RPCServer {
 	public static void main(String[] args) throws Exception {
 
 		ConnectionFactory factory = new ConnectionFactory();
-		factory.setHost("localhost");
+		factory.setHost("192.168.1.120");
 
 		Connection connection = factory.newConnection();
 		Channel channel = connection.createChannel();
