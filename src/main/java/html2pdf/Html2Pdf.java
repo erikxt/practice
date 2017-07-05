@@ -16,12 +16,12 @@ public class Html2Pdf {
 
     public static void main(String[] args) {
         Document document = new Document();
-        try {
-            ByteArrayOutputStream os = new ByteArrayOutputStream(1024 * 1024 * 10);
+        try (ByteArrayOutputStream os = new ByteArrayOutputStream(1024 * 1024 * 10);
+             FileOutputStream fos = new FileOutputStream("a.pdf")) {
             PdfWriter writer = PdfWriter.getInstance(document, os);
             document.open();
 
-            String str = "<html><head></head><body style=\"font-size:12.0pt; font-family:Times New Roman\">"+
+            String str = "<html><head></head><body style=\"font-size:12.0pt; font-family:Times New Roman\">" +
                     "<a href='http://www.rgagnon.com/howto.html'><b>Real's HowTo</b></a>" +
                     "<h1>Show your support</h1>" +
                     "<p>It DOES cost a lot to produce this site - in ISP storage and transfer fees</p>" +
@@ -41,7 +41,6 @@ public class Html2Pdf {
             worker.parseXHtml(writer, document, is, Charset.forName("UTF-8"), new XMLWorkerFontProvider("resources/fonts/"));
             // step 5
             document.close();
-            FileOutputStream fos = new FileOutputStream("a.pdf");
             os.writeTo(fos);
             os.close();
             fos.close();
