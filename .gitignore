@@ -5,3 +5,7 @@ Servers/
 RemoteSystemsTempFiles/
 .project
 .classpath
+.idea
+*.iml
+*/*.iml
+*/target/
